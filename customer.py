@@ -19,7 +19,7 @@ class Customer:
         order_detail = {'item_name':self.item_name,'quantity':self.quantity}
         for men in Restaurant.menu:
             if(men['item_name'].lower() == item_name.lower()):
-                if(self.balance < quantity*men['price']):
+                if(self.balance <= quantity*men['price']):
                     print(f"You don't have enough balance.Please add at least {quantity*men['price']} balance\n")
                     self.balance -= quantity*men['price']
                     break
